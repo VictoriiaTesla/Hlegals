@@ -1,0 +1,50 @@
+@mixin fluid-type(
+  $min-font-size: 32px,
+  $max-font-size: 42px,
+  $lower-range: 375px,
+  $upper-range: 1440px
+) {
+  font-size: calc(
+          #{$min-font-size} + #{(
+        ($max-font-size / ($max-font-size * 0 + 1)) -
+          ($min-font-size / ($min-font-size * 0 + 1))
+      )} * ((100vw - #{$lower-range}) / #{(
+            ($upper-range / ($upper-range * 0 + 1)) -
+              ($lower-range / ($lower-range * 0 + 1))
+          )})
+  );
+}
+
+@mixin fluid-line-height(
+  $min-line-height: 38px,
+  $max-line-height: 50px,
+  $lower-range: 375px,
+  $upper-range: 1440px
+) {
+  line-height: calc(
+          #{$min-line-height} + #{(
+        ($max-line-height / ($max-line-height * 0 + 1)) -
+          ($min-line-height / ($min-line-height * 0 + 1))
+      )} * ((100vw - #{$lower-range}) / #{(
+            ($upper-range / ($upper-range * 0 + 1)) -
+              ($lower-range / ($lower-range * 0 + 1))
+          )})
+  );
+}
+
+@mixin fluid-letter-spacing(
+  $min-letter-spacing: 20px,
+  $max-letter-spacing: 63px,
+  $lower-range: 375px,
+  $upper-range: 1440px
+) {
+  letter-spacing: calc(
+          #{$min-letter-spacing} + #{(
+        ($max-letter-spacing / ($max-letter-spacing * 0 + 1)) -
+          ($min-letter-spacing / ($min-letter-spacing * 0 + 1))
+      )} * ((100vw - #{$lower-range}) / #{(
+            ($upper-range / ($upper-range * 0 + 1)) -
+              ($lower-range / ($lower-range * 0 + 1))
+          )})
+  );
+}
